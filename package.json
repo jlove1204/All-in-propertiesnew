@@ -1,11 +1,12 @@
 {
-  "name": "all-in-properties-owner-dashboard",
+  "name": "all-in-properties-booking",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.57.0"
+    "@supabase/supabase-js": "^2.57.0",
+    "stripe": "^18.5.0"
   }
 }

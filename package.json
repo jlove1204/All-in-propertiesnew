@@ -1,12 +1,13 @@
 {
   "name": "all-in-properties-booking",
   "private": true,
-  "version": "3.0.0",
+  "version": "4.0.0",
   "engines": {
     "node": ">=20"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.0",
-    "stripe": "^18.5.0"
+    "stripe": "^18.5.0",
+    "raw-body": "^3.0.0"
   }
 }

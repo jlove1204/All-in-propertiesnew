@@ -6,15 +6,27 @@
       "use": "@vercel/node"
     },
     {
+      "src": "webhook.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "index.html",
       "use": "@vercel/static"
     },
     {
       "src": "admin.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "policies.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/api/stripe-webhook",
+      "dest": "/webhook.js"
+    },
     {
       "src": "/api/(.*)",
       "dest": "/api.js"
@@ -22,6 +34,10 @@
     {
       "src": "/admin/?",
       "dest": "/admin.html"
+    },
+    {
+      "src": "/policies/?",
+      "dest": "/policies.html"
     },
     {
       "src": "/(.*)",

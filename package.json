@@ -1,7 +1,7 @@
 {
   "name": "all-in-properties-booking",
   "private": true,
-  "version": "4.0.0",
+  "version": "5.0.0",
   "engines": {
     "node": ">=20"
   },

@@ -1,0 +1,47 @@
+ALL IN PROPERTIES LLC — TOMORROW LAUNCH CHECKLIST
+
+OWNER / LISTING
+[ ] Owner Login works.
+[ ] Add Property works.
+[ ] General area is public-safe.
+[ ] Exact address is entered in the PRIVATE section.
+[ ] At least one property photo uploads and displays.
+[ ] Cover photo is correct.
+[ ] Tax percentage is correct.
+[ ] Cleaning fee is correct.
+[ ] Max guests and minimum nights are correct.
+[ ] Check-in/check-out times are correct.
+[ ] House rules and cancellation policy are filled in.
+[ ] Arrival, access, parking, Wi-Fi, checkout, and contact details are filled in.
+[ ] Property is Published.
+
+GUEST / BOOKING
+[ ] Homepage shows only general area, never exact address.
+[ ] Availability search works.
+[ ] Quote math matches expected nightly + cleaning + tax.
+[ ] Guest can enter name/email/phone/special requests.
+[ ] Guest must accept policies.
+[ ] Stripe Checkout opens.
+[ ] Successful checkout returns to /guest.
+[ ] Guest Portal shows confirmation code.
+[ ] Guest Portal shows exact address only after confirmation.
+[ ] Google Maps directions opens correctly.
+[ ] Check-in, parking, access, Wi-Fi and checkout details appear.
+[ ] Guest sends a test message.
+[ ] Owner sees unread message in dashboard.
+[ ] Owner reply appears in Guest Portal.
+
+PAYMENT
+[ ] Stripe account review is approved before live charging.
+[ ] Stripe webhook endpoint is created.
+[ ] STRIPE_WEBHOOK_SECRET is set in Vercel Production.
+[ ] Stripe test booking completes successfully.
+[ ] ENABLE_LIVE_CHECKOUT=true only after final test.
+[ ] Controlled live booking is verified before sending real guests to the site.
+
+SECURITY
+[ ] No secret keys are in GitHub files.
+[ ] Vercel environment variables are Production-scoped correctly.
+[ ] Owner password is strong and private.
+[ ] Public listing never displays door/gate/Wi-Fi credentials.
+[ ] Reservation-specific access code is changed between guests when applicable.

@@ -24,6 +24,10 @@
     {
       "src": "policies.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "legal.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -46,6 +50,10 @@
     {
       "src": "/policies/?",
       "dest": "/policies.html"
+    },
+    {
+      "src": "/(legal|terms|privacy)/?",
+      "dest": "/legal.html"
     },
     {
       "src": "/(.*)",

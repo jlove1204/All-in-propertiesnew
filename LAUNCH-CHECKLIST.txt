@@ -1,47 +1,76 @@
-ALL IN PROPERTIES LLC — TOMORROW LAUNCH CHECKLIST
+ALL IN PROPERTIES LLC — v6 LAUNCH CHECKLIST
 
-OWNER / LISTING
-[ ] Owner Login works.
-[ ] Add Property works.
-[ ] General area is public-safe.
-[ ] Exact address is entered in the PRIVATE section.
-[ ] At least one property photo uploads and displays.
-[ ] Cover photo is correct.
-[ ] Tax percentage is correct.
-[ ] Cleaning fee is correct.
-[ ] Max guests and minimum nights are correct.
-[ ] Check-in/check-out times are correct.
-[ ] House rules and cancellation policy are filled in.
-[ ] Arrival, access, parking, Wi-Fi, checkout, and contact details are filled in.
-[ ] Property is Published.
+DATABASE
+[✓] Guest profiles table created
+[✓] Legal consent audit table created
+[✓] Booking requests table created
+[✓] Pre-booking messaging table created
+[✓] Reservations linked to guest accounts and booking requests
+[✓] Pending-payment expiration field added
+[✓] Atomic owner-approval database function installed
+[✓] Direct anon/auth table privileges revoked on sensitive v6 tables
 
-GUEST / BOOKING
-[ ] Homepage shows only general area, never exact address.
-[ ] Availability search works.
-[ ] Quote math matches expected nightly + cleaning + tax.
-[ ] Guest can enter name/email/phone/special requests.
-[ ] Guest must accept policies.
-[ ] Stripe Checkout opens.
-[ ] Successful checkout returns to /guest.
-[ ] Guest Portal shows confirmation code.
-[ ] Guest Portal shows exact address only after confirmation.
-[ ] Google Maps directions opens correctly.
-[ ] Check-in, parking, access, Wi-Fi and checkout details appear.
-[ ] Guest sends a test message.
-[ ] Owner sees unread message in dashboard.
-[ ] Owner reply appears in Guest Portal.
+GUEST ACCOUNT
+[ ] Create a real test guest account
+[ ] Confirm email from the Supabase email
+[ ] Complete the guest profile
+[ ] Confirm guest must be 18+
+[ ] Verify phone OTP works
+[ ] Verify government-ID flow works
+[ ] Confirm unverified guest CANNOT submit a booking request
+[ ] Confirm all five legal checkboxes must be accepted
+[ ] Submit test booking request
+[ ] Confirm NO payment occurs before owner approval
+
+OWNER REVIEW
+[ ] Booking Requests tab shows the request
+[ ] Verify badges show Email / Phone / Government ID
+[ ] Confirm owner cannot see ID image/number
+[ ] Test pre-booking owner↔guest messages
+[ ] Approve request
+[ ] Confirm approved dates become held
+[ ] Confirm overlapping approval is blocked
+[ ] Decline another test request
+[ ] Confirm guest sees decision message
 
 PAYMENT
-[ ] Stripe account review is approved before live charging.
-[ ] Stripe webhook endpoint is created.
-[ ] STRIPE_WEBHOOK_SECRET is set in Vercel Production.
-[ ] Stripe test booking completes successfully.
-[ ] ENABLE_LIVE_CHECKOUT=true only after final test.
-[ ] Controlled live booking is verified before sending real guests to the site.
+[ ] Stripe review completed
+[ ] Stripe Identity enabled
+[ ] Stripe test secret configured
+[ ] Stripe webhook configured with checkout + identity events
+[ ] Test approved guest Pay & Confirm
+[ ] Confirm reservation becomes CONFIRMED
+[ ] Confirm exact address/check-in/Wi-Fi only appear after confirmation
+[ ] Confirm Owner Dashboard sees confirmed reservation
+[ ] Confirm confirmed-stay messaging works
+[ ] Only after successful test: configure live Stripe + ENABLE_LIVE_CHECKOUT=true
 
-SECURITY
-[ ] No secret keys are in GitHub files.
-[ ] Vercel environment variables are Production-scoped correctly.
-[ ] Owner password is strong and private.
-[ ] Public listing never displays door/gate/Wi-Fi credentials.
-[ ] Reservation-specific access code is changed between guests when applicable.
+SUPABASE SMS
+[ ] Supported SMS provider configured
+[ ] Phone MFA verification enabled
+[ ] Production rate limits reviewed
+[ ] CAPTCHA / abuse controls considered for signup/SMS endpoints
+
+LEGAL / PRIVACY
+[ ] /legal loads
+[ ] /terms loads
+[ ] /privacy loads
+[ ] /policies loads
+[ ] Required checkboxes are not preselected
+[ ] Terms/privacy version acceptance is saved
+[ ] Account export tested
+[ ] Account deletion request tested
+[ ] Qualified attorney reviews final terms before multi-state/international scale
+[ ] Tax/legal requirements confirmed for each property jurisdiction
+
+ACCESSIBILITY / QUALITY
+[ ] iPhone/mobile account flow tested
+[ ] Keyboard navigation tested
+[ ] Form labels and error states tested
+[ ] Color contrast and screen-reader audit performed
+[ ] Chrome/Safari/Firefox tested
+
+AUTH HARDENING
+[ ] Enable Supabase leaked-password protection before production launch
+[ ] Review signup/SMS rate limits and CAPTCHA
+[ ] Owner account uses a unique strong password and MFA

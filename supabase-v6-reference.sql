@@ -1,0 +1,6 @@
+-- REFERENCE ONLY — v6 DATABASE WORK WAS ALREADY APPLIED THROUGH THE SUPABASE INTEGRATION.
+-- Do not run this file.
+-- Migration name: guest_accounts_identity_booking_requests_v6
+-- Tables added: guest_profiles, legal_consents, booking_requests, booking_request_messages
+-- reservations extended with guest_user_id, booking_request_id, hold_expires_at
+-- approve_booking_request(...) installed as a service-role-only SECURITY DEFINER RPC.
